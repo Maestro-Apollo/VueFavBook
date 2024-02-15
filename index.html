@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css" />
+    <script src="https://unpkg.com/vue@3.0.2/dist/vue.global.js"></script>
+</head>
+
+<body>
+    <div id="app">
+        <div v-if="showBooks">
+            <ul>
+                <li v-for="book in books" :class="{fav: book.isFav}" @click="favBook(book)">
+                    <img style="width: 10%" :src="book.img" :alt="book.title" />
+                    <h4>{{ book.title }}</h4>
+                    <p>{{ book.author }}</p>
+                </li>
+            </ul>
+        </div>
+        <button @click="textToggle">
+        <span>{{ buttonName }}</span>
+      </button>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+
+</html>
